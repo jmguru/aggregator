@@ -4,18 +4,10 @@ node {
 
   stage 'Stage Build'
 
-  // branch name from Jenkins environment variables
-  echo "My branch is: ${env.BRANCH_NAME}
+  def boob = "boob"
   
-  def flavor = flavor(env.BRANCH_NAME)
-  echo "Building flavor ${flavor}"
+  assert boob == "comf"
   
-
+  stage 'The End, hobo'
 }
 
-@NonCPS
-def flavor(branchName) {
-  def matcher = (env.BRANCH_NAME =~ /([a-z_]+)/)
-  assert matcher.matches()
-  matcher[0][1]
-}
