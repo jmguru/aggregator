@@ -4,7 +4,7 @@ node {
 
   def bitwig = "oomf-oomf"
   
-  assert bitwig = "gamba"
+  assert bitwig == "gamba"
   
 
 }
