@@ -2,9 +2,17 @@
 
 node {
 
-  def bitwig = "oomf-oomf"
-  
-  assert bitwig == "gamba"
+  stage 'Stage Build'
+
+  // branch name from Jenkins environment variables
+  echo "My branch is: ${env.BRANCH_NAME}
   
 
+}
+
+@NonCPS
+def flavor(branchName) {
+  def matcher = (env.BRANCH_NAME =~ /([a-z_]+)/)
+  assert matcher.matches()
+  matcher[0][1]
 }
