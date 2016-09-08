@@ -3,18 +3,10 @@
 node {
 
   stage 'Stage Build'
-  this.buildVersion='johng'  
+  this.buildVersion='7.1.2'  
   
-  assert getOldBuildVersion().matches(getBuildVersion()) : "AAAw shit!"
+  assert this.buildVersion == '6.15.8' : "you suck nigga"
   
   stage 'The End, hobo'
 }
 
-def getBuildVersion()
-{
-	return this.buildVersion
-}
-
-def getOldBuildVersion() {
-	return 'abcde'
-}
