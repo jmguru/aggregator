@@ -10,7 +10,7 @@ node {
 
 def getBuildVersion()
 {
-	return this.buildVersion()
+	return this.buildVersion
 }
 
 def getOldBuildVersion() {
