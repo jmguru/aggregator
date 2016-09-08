@@ -4,12 +4,8 @@ node {
 
   stage 'Stage Build'
   this.buildVersion='johng'  
-  try {
-      assert getOldBuildVersion().matches(getBuildVersion()) : 'Uh oh, some shit failed'
-  }
-  catch (Err) {
-  	echo 'Didnt work, keep going.'
-  }
+  
+  assert getOldBuildVersion().matches(getBuildVersion())
   
   stage 'The End, hobo'
 }
