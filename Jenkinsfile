@@ -5,7 +5,7 @@ node {
   stage 'Stage Build'
   this.buildVersion='johng'  
   
-  assert getOldBuildVersion().matches(getBuildVersion())
+  assert getOldBuildVersion().matches(getBuildVersion()) : "AAAw shit!"
   
   stage 'The End, hobo'
 }
