@@ -3,13 +3,16 @@
 node {
 
   stage 'Stage Build'
-  try {
-    def name = "John"
-    assert name == "Peter" : "Name should be John"
-  } catch (AssertionError e) {
-	   println "Something bad happened: " + e.getMessage()
-   }
+  this.buildVersion='johng'  
 
   stage 'The End, hobo'
 }
 
+def getBuildVersion()
+{
+	return this.buildVersion()
+}
+
+def getOldBuildVersion() {
+	return 'abcde'
+}
