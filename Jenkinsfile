@@ -8,7 +8,7 @@ node {
       assert getOldBuildVersion().matches(getBuildVersion()) : 'Uh oh, some shit failed'
   }
   catch (Err) {
-  	echo 'Didn't work, keep going.
+  	echo 'Didnt work, keep going.'
   }
   
   stage 'The End, hobo'
