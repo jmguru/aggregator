@@ -5,8 +5,9 @@ node {
   stage 'Stage Build'
   def slurper = new groovy.json.JsonSlurper();
   def serviceList
+  def pathfinder = java.nio.file.Paths();
   
-  Paths.get('resources/report.json').withReader { reader ->
+  pathfinder.get('resources/report.json').withReader { reader ->
      serviceList = slurper.parse(reader)
   }
   
