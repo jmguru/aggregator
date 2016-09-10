@@ -1,17 +1,19 @@
 #!groovy
 
+import groovy.json.slurper
+import java.nio.file.Paths
+
 node {
 
   stage 'Stage Build'
-  this.buildVersion='7.1.2'  
+  JsonSlurper slurper = new JsonSlurper();
+  def serviceList
   
-  try {
-    assert this.buildVersion == '7.1.2' : "you suck chigger"
-  }
-  catch(Err) {
-    echo "Nevermind! "  
+  Paths.get('resources/report.json').withReader { reader ->
+    serviceList = slurper.parse(reader)
   }
   
-  stage 'The End, hobo'
+  println serviceList.dump();
+  
 }
 
