@@ -26,6 +26,7 @@ node ('gorgon') {
   //Update
   sh 'hostname; pwd'
   def builder = new groovy.json.JsonBuilder(serviceList);
+  sh 'hostname; pwd'
   builder.content.services[serviceStr].BuildVersion = '1.1';
   json = builder.toPrettyString();
   println json
