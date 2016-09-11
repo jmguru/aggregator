@@ -11,11 +11,9 @@ node ('gorgon') {
   def propPath = '/opt/wl/test/workspace/build/props.json'
   
   stage 'Stage Build'
-  def serviceList ; //= [];
+  def serviceList;
   
-  node ('gorgon') {
-        serviceList = jsonParse(readFile(propPath));
-  }
+  serviceList = jsonParse(readFile(propPath));
   
   def services= serviceList.services;
   
@@ -32,6 +30,6 @@ node ('gorgon') {
   json = builder.toPrettyString();
   println json
   
-  sh 'hostname'
+  new File(propPath).write(json)
 }
 
