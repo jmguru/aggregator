@@ -2,10 +2,13 @@
 
 @NonCPS
 def jsonParse(def propPath) {
+   node ('gorgon')
+   {
     sh 'ls -al ' + propPath
     def json = readFile(propPath);
     println json
     return new groovy.json.JsonSlurperClassic().parseText(json);
+   }
 }
 
 
