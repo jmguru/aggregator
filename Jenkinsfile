@@ -1,7 +1,8 @@
 #!groovy
 
 @NonCPS
-def jsonParse(def json) {
+def jsonParse(def propPath) {
+    def json = readFile(propPath);
     return new groovy.json.JsonSlurperClassic().parseText(json);
 }
 
@@ -13,7 +14,7 @@ node ('gorgon') {
   stage 'Stage Build'
   def serviceList;
   
-  serviceList = jsonParse(readFile(propPath));
+  serviceList = jsonParse(propPath);
   
   def services= serviceList.services;
   
