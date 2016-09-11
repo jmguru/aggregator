@@ -5,6 +5,13 @@ def jsonParse(def json) {
     return new groovy.json.JsonSlurperClassic().parseText(json);
 }
 
+@NonCPS
+def writeFile(def propPath, def json) {
+    node ('gorgon') {  
+      new File(propPath).write(json);
+    }
+    return;
+}
 
 node ('gorgon') {
 
@@ -30,6 +37,7 @@ node ('gorgon') {
   json = builder.toPrettyString();
   println json
   
-  new File(propPath).write(json)
+  writeFile(propPath,json);
+  
 }
 
