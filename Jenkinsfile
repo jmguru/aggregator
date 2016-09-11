@@ -2,7 +2,7 @@
 
 @NonCPS
 def jsonParse(def propPath) {
-    sh 'hostname'
+    sh 'ls -al ' + propPath
     def json = readFile(propPath);
     println json
     return new groovy.json.JsonSlurperClassic().parseText(json);
