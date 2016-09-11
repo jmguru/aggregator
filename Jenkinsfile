@@ -29,7 +29,7 @@ node ('gorgon') {
  //builder.content.services[serviceStr].BuildVersion = '1.1';
  //json = builder.toPrettyString();
  //println json
-  
+  sh 'whoami'
   sh 'rm -f ' + propPath;
   
   //mrFile = new File(propPath);
