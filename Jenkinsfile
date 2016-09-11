@@ -5,12 +5,7 @@ def jsonParse(def json) {
     return new groovy.json.JsonSlurperClassic().parseText(json);
 }
 
-@NonCPS
-def whereAmI() {
-    sh 'hostname'
-    sh 'pwd'
-    return;
-}
+
 node ('gorgon') {
 
   def propPath = '/opt/wl/test/workspace/build/props.json'
@@ -35,10 +30,10 @@ node ('gorgon') {
  json = builder.toPrettyString();
  println json
  
- //whereAmI();
- mrFile = new File(propPath);
- mrFile.delete();
- 
+ node ('gorgon') {
+    mrFile = new File(propPath);
+    mrFile.delete();
+ }
   
 }
 
