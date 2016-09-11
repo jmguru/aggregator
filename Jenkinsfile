@@ -7,6 +7,10 @@ import hudson.*
 
 
 node ('gorgon') {
+    def projects = []
+    projects.add([projectname: 'downstream-base', ci: true, deployment: false]);
+    def json = JsonOutput.toJson(projects)
+    println json
 /*
     stage 'Stage Build'
     
