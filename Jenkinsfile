@@ -7,7 +7,7 @@ def jsonParse(def json) {
 
 node {
 
-  def propPath = '/var/jenkins_home/workspace/build/props.json'
+  def propPath = '/opt/wl/test/workspace/build/props.json'
   
   stage 'Stage Build'
   def serviceList = readFile(propPath).trim()
