@@ -12,8 +12,9 @@ node ('gorgon') {
     stage 'Stage Build'
     
     def propPath = '/opt/wl/jenkins/build/props.json';
+    def json = readFile(propPath);
     def jsonParse = new groovy.json.JsonSlurperClassic();
-    def serviceList = jsonParse.parseText(readFile(propPath));
+   // def serviceList = jsonParse.parseText(readFile(propPath));
 
 /*
   def propPath = '/opt/wl/jenkins/build/props.json'
