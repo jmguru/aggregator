@@ -24,13 +24,13 @@ node ('gorgon') {
   println serviceList.services.keySet();
   
   //Update
- 
+  sh 'hostname; pwd'
   def builder = new groovy.json.JsonBuilder(serviceList);
   builder.content.services[serviceStr].BuildVersion = '1.1';
   json = builder.toPrettyString();
   println json
   
-  new File(propPath).write(json);
+  //new File(propPath).write(json);
   
 }
 
