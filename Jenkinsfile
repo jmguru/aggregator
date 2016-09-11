@@ -25,10 +25,10 @@ node ('gorgon') {
   
   //Update
  
- def builder = new groovy.json.JsonBuilder(serviceList);
- builder.content.services[serviceStr].BuildVersion = '1.1';
- json = builder.toPrettyString();
- println json
+ //def builder = new groovy.json.JsonBuilder(serviceList);
+ //builder.content.services[serviceStr].BuildVersion = '1.1';
+ //json = builder.toPrettyString();
+ //println json
  
  node ('gorgon') {
     mrFile = new File(propPath);
