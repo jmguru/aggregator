@@ -29,7 +29,7 @@ node ('gorgon') {
  json = builder.toPrettyString();
 
  println json
- propPath.write(json);
+ new File(propPath).write(json);
   
 }
 
