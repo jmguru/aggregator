@@ -3,7 +3,7 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonBuilder
 import groovy.json.JsonOutput
 import hudson.FilePath
-import hudson.
+import hudson.*
 
 
 node ('gorgon') {
