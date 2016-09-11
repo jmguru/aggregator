@@ -5,7 +5,7 @@ def jsonParse(def json) {
     new groovy.json.JsonSlurperClassic().parseText(json)
 }
 
-node {
+node ('gorgon') {
 
   def propPath = '/opt/wl/test/workspace/build/props.json'
   
