@@ -18,7 +18,7 @@ node ('gorgon') {
   
   def serviceStr="eventpreprocessor";
   
-  println serviceList.services.serviceStr;
+  println serviceList.services[serviceStr];
   
   // Important, don't forget this! 
   //println serviceList.services.keySet();
