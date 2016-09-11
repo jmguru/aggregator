@@ -1,6 +1,11 @@
 #!groovy
 import groovy.json.*
 
+@NonCPS
+def writeFile(def propPath, def jsonStr) {
+    new File(propPath).write(jsonStr);
+}
+
 node ('gorgon') {
     stage 'Stage Build'
     
@@ -19,7 +24,7 @@ node ('gorgon') {
     builder.content.services[serviceStr].BuildVersion = '1.1';
     def jsonStr = builder.toPrettyString();
     println jsonStr
-    new File(propPath).write(jsonStr);
+    writeFile(propPath, jsonStr)
     
 
 }
