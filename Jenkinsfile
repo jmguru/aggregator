@@ -13,7 +13,9 @@ node ('gorgon') {
   stage 'Stage Build'
   def serviceList = [];
   
-  serviceList = jsonParse(readFile(propPath));
+  node ('gorgon') {
+        serviceList = jsonParse(readFile(propPath));
+  }
   
   def services= serviceList.services;
   
