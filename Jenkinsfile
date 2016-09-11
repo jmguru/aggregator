@@ -2,8 +2,7 @@
 
 @NonCPS
 def jsonParse(def json) {
-    new groovy.json.JsonSlurperClassic().parseText(json)
-    return new HashMap<>(slurper.parseText(json))
+    return new groovy.json.JsonSlurperClassic().parseText(json);
 }
 
 node ('gorgon') {
