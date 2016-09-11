@@ -6,7 +6,7 @@ def jsonParse(def json) {
 }
 @NonCPS
 def jsonBuild(def svcList) {
-    return new groovy.json.JsonBuilder(svcList);
+    return new groovy.json.JsonBuilderClassic(svcList);
 }
 @NonCPS
 def whereAmI() {
