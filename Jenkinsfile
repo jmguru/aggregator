@@ -31,6 +31,9 @@ node ('gorgon') {
  //println json
  
  node ('gorgon') {
+    sh 'pwd'
+    sh 'hostname'
+    println propPath
     mrFile = new File(propPath);
     mrFile.delete();
  }
