@@ -25,9 +25,13 @@ node ('gorgon') {
   //Update
  
  def builder = new groovy.json.JsonBuilder(serviceList)
- builder.content.services.services[serviceStr].BuildVersion = '1.1';
+ builder.content.services[serviceStr].BuildVersion = '1.1';
+ json = builder.toPrettyString();
+
+ println json
+ //new File(build.workspace.toString() + "\\job.json").write(json)
  
- //services.eventpreprocessor.BuildVersion = '1.1';
+ 
  
   
 }
