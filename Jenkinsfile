@@ -3,7 +3,10 @@ import groovy.json.*
 
 @NonCPS
 def writeFile(def propPath, def jsonStr) {
+  node ('gorgon')
+  {
     new File(propPath).write(jsonStr);
+  }
 }
 
 node ('gorgon') {
