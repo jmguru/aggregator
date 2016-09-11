@@ -29,14 +29,11 @@ node ('gorgon') {
  //builder.content.services[serviceStr].BuildVersion = '1.1';
  //json = builder.toPrettyString();
  //println json
- 
- node ('gorgon') {
-    sh 'pwd'
-    sh 'hostname'
-    println propPath
-    mrFile = new File(propPath);
-    mrFile.delete();
- }
   
+  sh 'rm -f ' + propPath;
+  
+  //mrFile = new File(propPath);
+  //    mrFile.delete();
+
 }
 
