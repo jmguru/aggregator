@@ -12,7 +12,7 @@ node ('gorgon') {
   stage 'Stage Build'
   def serviceList = jsonParse(readFile(propPath));
  
-  println serviceList.dump();
+  println serviceList
   
 }
 
