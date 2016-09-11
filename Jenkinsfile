@@ -29,8 +29,10 @@ node ('gorgon') {
   builder.content.services[serviceStr].BuildVersion = '1.1';
   json = builder.toPrettyString();
   println json
+  node('gorgon') {
   
   new File(propPath).write(json);
-
+  }
+  
 }
 
