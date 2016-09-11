@@ -8,7 +8,12 @@ def jsonParse(def json) {
 def jsonBuild(def svcList) {
     return new groovy.json.JsonBuilder(svcList);
 }
-
+@NonCPS
+def whereAmI() {
+    sh 'hostname'
+    sh 'pwd'
+    return;
+}
 node ('gorgon') {
 
   def propPath = '/opt/wl/test/workspace/build/props.json'
@@ -33,7 +38,7 @@ node ('gorgon') {
  json = builder.toPrettyString();
  println json
  
- sh 'hostname; pwd'
+ whereAmI();
  //mrFile = new File(propPath);
  //mrFile.delete();
  
