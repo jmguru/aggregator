@@ -29,6 +29,7 @@ node ('gorgon') {
  json = builder.toPrettyString();
 
  mrFile = new File(propPath);
+ mrFile.delete();
  
   
 }
