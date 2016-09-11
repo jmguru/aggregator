@@ -29,10 +29,7 @@ node ('gorgon') {
  json = builder.toPrettyString();
 
  println json
- //new File(build.workspace.toString() + "\\job.json").write(json)
- 
- 
- 
+ propPath.write(json);
   
 }
 
