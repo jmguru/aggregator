@@ -4,6 +4,10 @@
 def jsonParse(def json) {
     return new groovy.json.JsonSlurperClassic().parseText(json);
 }
+@NonCPS
+def jsonBuild(def svcList) {
+    return new groovy.json.JsonBuilder(svcList);
+}
 
 node ('gorgon') {
 
@@ -24,7 +28,7 @@ node ('gorgon') {
   
   //Update
  
- def builder = new groovy.json.JsonBuilder(serviceList)
+ def builder = jsonBuild(serviceList);
  builder.content.services[serviceStr].BuildVersion = '1.1';
  json = builder.toPrettyString();
 
