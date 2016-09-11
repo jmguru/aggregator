@@ -9,7 +9,7 @@ def jsonParse(def json) {
 */
 
 node ('gorgon') {
-    
+    def jsonParse = new groovy.json.JsonSlurperClassic();
 
 /*
   def propPath = '/opt/wl/jenkins/build/props.json'
