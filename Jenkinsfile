@@ -31,7 +31,7 @@ node ('gorgon') {
  def builder = jsonBuild(serviceList);
  builder.content.services[serviceStr].BuildVersion = '1.1';
  json = builder.toPrettyString();
-
+ println json
  //sh 'hostname; pwd'
  //mrFile = new File(propPath);
  //mrFile.delete();
