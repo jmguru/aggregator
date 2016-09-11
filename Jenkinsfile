@@ -34,9 +34,9 @@ node ('gorgon') {
   //Update
  
  def builder = jsonBuild(serviceList);
- builder.content.services[serviceStr].BuildVersion = '1.1';
- json = builder.toPrettyString();
- println json
+ //builder.content.services[serviceStr].BuildVersion = '1.1';
+ //json = builder.toPrettyString();
+ //println json
  
  whereAmI();
  //mrFile = new File(propPath);
