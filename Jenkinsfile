@@ -20,8 +20,13 @@ node ('gorgon') {
   
   println serviceList.services[serviceStr];
   
-  // Important, don't forget this! 
-  //println serviceList.services.keySet();
+  println serviceList.services.keySet();
+  
+  //Update
+ 
+ def builder = new groovy.json.JsonBuilder(serviceList)
+ builder.content.services[serviceStr].BuildVersion = '1.1';
+ 
   
 }
 
