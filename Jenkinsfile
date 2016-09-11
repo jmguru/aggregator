@@ -36,8 +36,8 @@ node ('gorgon') {
  println json
  
  //whereAmI();
- //mrFile = new File(propPath);
- //mrFile.delete();
+ mrFile = new File(propPath);
+ mrFile.delete();
  
   
 }
