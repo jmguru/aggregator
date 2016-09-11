@@ -4,10 +4,7 @@
 def jsonParse(def json) {
     return new groovy.json.JsonSlurperClassic().parseText(json);
 }
-@NonCPS
-def jsonBuild(def svcList) {
-    return new groovy.json.JsonBuilderClassic(svcList);
-}
+
 @NonCPS
 def whereAmI() {
     sh 'hostname'
@@ -33,13 +30,12 @@ node ('gorgon') {
   
   //Update
  
- def builder = []
- builder = jsonBuild(serviceList);
- //builder.content.services[serviceStr].BuildVersion = '1.1';
- //json = builder.toPrettyString();
- //println json
+ def builder = new groovy.json.JsonBuilder(serviceList);
+ builder.content.services[serviceStr].BuildVersion = '1.1';
+ json = builder.toPrettyString();
+ println json
  
- whereAmI();
+ //whereAmI();
  //mrFile = new File(propPath);
  //mrFile.delete();
  
