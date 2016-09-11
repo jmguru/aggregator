@@ -14,7 +14,7 @@ node ('gorgon') {
   def serviceList = [];
   
   //serviceList = jsonParse(readFile(propPath));
-  serviceList = groovy.json.JsonSlurperClassic().parseText(readFile(propPath));
+  serviceList = new groovy.json.JsonSlurperClassic().parseText(readFile(propPath));
   def services= serviceList.services;
   
   def serviceStr="eventpreprocessor";
