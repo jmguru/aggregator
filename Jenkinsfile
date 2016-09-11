@@ -13,8 +13,8 @@ node ('gorgon') {
   stage 'Stage Build'
   def serviceList = [];
   
-  //serviceList = jsonParse(readFile(propPath));
-  serviceList = new groovy.json.JsonSlurperClassic().parseText(readFile(propPath));
+  serviceList = jsonParse(readFile(propPath));
+  
   def services= serviceList.services;
   
   def serviceStr="eventpreprocessor";
