@@ -32,6 +32,6 @@ node ('gorgon') {
   json = builder.toPrettyString();
   println json
   
-  
+  sh 'hostname'
 }
 
