@@ -10,10 +10,8 @@ node ('gorgon') {
   def propPath = '/opt/wl/test/workspace/build/props.json'
   
   stage 'Stage Build'
-  def serviceList = readFile(propPath).trim()
-  
-  jsonParse(serviceList);
-  
+  def serviceList = jsonParse(readFile(propPath));
+ 
   println serviceList.dump();
   
 }
