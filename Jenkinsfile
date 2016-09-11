@@ -7,9 +7,7 @@ def jsonParse(def json) {
 
 @NonCPS
 def writeFile(def propPath, def json) {
-    node ('gorgon') {  
       new File(propPath).write(json);
-    }
     return;
 }
 
