@@ -1,5 +1,5 @@
 #!groovy
-
+import groovy.json.*
 
 /*
 @NonCPS
@@ -10,7 +10,7 @@ def jsonParse(def json) {
 
 node ('gorgon') {
     
-import groovy.json.*
+
 /*
   def propPath = '/opt/wl/jenkins/build/props.json'
   
