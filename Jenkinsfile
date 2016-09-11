@@ -8,7 +8,7 @@ def jsonParse(def json) {
 
 node ('gorgon') {
 
-  def propPath = '/opt/wl/test/workspace/build/props.json'
+  def propPath = '/opt/wl/jenkins/build/props.json'
   
   stage 'Stage Build'
   def serviceList;
