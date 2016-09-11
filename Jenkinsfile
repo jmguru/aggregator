@@ -13,8 +13,8 @@ node ('gorgon') {
   stage 'Stage Build'
   def serviceList = [];
   
-  serviceList = jsonParse(readFile(propPath));
- 
+  //serviceList = jsonParse(readFile(propPath));
+  serviceList = groovy.json.JsonSlurperClassic().parseText(readFile(propPath));
   def services= serviceList.services;
   
   def serviceStr="eventpreprocessor";
@@ -29,10 +29,7 @@ node ('gorgon') {
   builder.content.services[serviceStr].BuildVersion = '1.1';
   json = builder.toPrettyString();
   println json
-  node('gorgon') {
   
-  new File(propPath).write(json);
-  }
   
 }
 
