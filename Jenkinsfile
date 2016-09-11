@@ -7,8 +7,9 @@ def jsonParse(def propPath) {
     sh 'ls -al ' + propPath
     def json = readFile(propPath);
     println json
-    return new groovy.json.JsonSlurperClassic().parseText(json);
    }
+    return new groovy.json.JsonSlurperClassic().parseText(json);
+   
 }
 
 
