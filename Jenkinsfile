@@ -15,6 +15,7 @@ node ('gorgon') {
     println serviceList.services.keySet();
     json=null;
     
+    def builder = new groovy.json.JsonBuilder(serviceList);
 
 /*
   
