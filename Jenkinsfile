@@ -12,8 +12,7 @@ node ('gorgon') {
     def json = JsonOutput.toJson(projects)
     println json
     
-    hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
-    println "${workspace}"
+    hudson.FilePath workspace = hudson.model.Executor.getExecutor().getCurrentWorkspace()
     
     //new File("${workspace}/test.json").write(new JsonBuilder(projects).toPrettyString())
 /*
