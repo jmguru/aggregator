@@ -15,6 +15,14 @@ node ('gorgon') {
     def json = readFile(propPath);
     def jsonParse = new groovy.json.JsonSlurperClassic();
     def serviceList = jsonParse.parseText(json);
+    
+    def svc = serviceList.services;
+  
+    def serviceStr="eventpreprocessor";
+  
+    println serviceList.services[serviceStr];
+  
+    println serviceList.services.keySet();
 
 /*
   def propPath = '/opt/wl/jenkins/build/props.json'
