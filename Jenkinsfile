@@ -13,7 +13,9 @@ node ('gorgon') {
     println json
     
     hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
-    new File("${workspace}/test.json").write(new JsonBuilder(projects).toPrettyString())
+    println "${workspace}"
+    
+    //new File("${workspace}/test.json").write(new JsonBuilder(projects).toPrettyString())
 /*
     stage 'Stage Build'
     
