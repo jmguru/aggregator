@@ -8,11 +8,11 @@ import hudson.*
 
 node ('gorgon') {
     def projects = []
-    projects.add([projectname: 'downstream-base', ci: true, deployment: false]);
+    projects.add([projectname: 'aggy', ci: true, deployment: false]);
     def json = JsonOutput.toJson(projects)
     println json
     
-    hudson.FilePath workspace = hudson.model.Executor.getExecutor().getCurrentWorkspace()
+    hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
     
     //new File("${workspace}/test.json").write(new JsonBuilder(projects).toPrettyString())
 /*
