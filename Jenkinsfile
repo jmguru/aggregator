@@ -16,7 +16,8 @@ node ('gorgon') {
     json=null;
     
     def builder = new groovy.json.JsonBuilder(serviceList);
-
+    json = builder.toPrettyString();
+    println json
 /*
   
   
