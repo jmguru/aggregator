@@ -1,13 +1,17 @@
 #!groovy
 
+
+/*
 @NonCPS
 def jsonParse(def json) {
     return new groovy.json.JsonSlurperClassic().parseText(json);
 }
-
+*/
 
 node ('gorgon') {
-
+    
+import groovy.json.*
+/*
   def propPath = '/opt/wl/jenkins/build/props.json'
   
   stage 'Stage Build'
@@ -32,6 +36,6 @@ node ('gorgon') {
   println json
   
   //new File(propPath).write(json);
-  
+  */
 }
 
