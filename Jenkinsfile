@@ -14,12 +14,8 @@ node ('gorgon') {
   
   serviceList = jsonParse(readFile(propPath));
  
- def services= serviceList.services;
- 
- services.each{
-    println it."services"
-}
-  //println serviceList.services;
+  def services= serviceList.services;
+  println serviceList.services;
   
 }
 
