@@ -14,7 +14,7 @@ node ('gorgon') {
   
   serviceList = jsonParse(readFile(propPath));
  
-  println serviceList.size();
+  println serviceList.services;
   
 }
 
