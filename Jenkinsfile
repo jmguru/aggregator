@@ -5,7 +5,7 @@ node ('gorgon') {
    
     stage 'Stage Build'
     //sh 'sh /opt/wl/jenkins/getServices.sh'
-    println "jq".execute().text
+    println "pwd".execute().text
     
 
 }
