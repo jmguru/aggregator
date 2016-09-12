@@ -4,7 +4,7 @@
 node ('gorgon') {
    
     stage 'Stage Build'
-    sh 'sh getServices.sh'
+    sh 'ls -al getServices.sh'
     //println "sh getServices.sh".execute().text
     
 
