@@ -12,8 +12,9 @@ node ('gorgon') {
     def saveOut = System.out
     
     System.out = newOut
-    println "sh /var/jenkins_home/getServices.sh".execute().text
+    
     System.out = saveOut
+    println "sh /var/jenkins_home/getServices.sh".execute().text
 
     println "TINKY!!! " + buf.toString()
 
