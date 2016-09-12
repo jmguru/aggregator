@@ -23,7 +23,7 @@ node ('gorgon') {
     println "Using string.execute().text method:"
     println "hostname".execute().text
     
-    def boom = sh 'sh /opt/wl/jenkins/getServices.sh'
+    def boom = sh script: 'sh /opt/wl/jenkins/getServices.sh', returnStdout: true
     print boom
 
 }
