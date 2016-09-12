@@ -10,7 +10,7 @@ node ('gorgon') {
    
     stage 'Stage Build'
     
-    def boom = sh script: 'sh getServices.sh', returnStdout: true
+    def boom = sh script: 'sh /opt/wl/jenkins/getServices.sh', returnStdout: true
     boomlist = boom.tokenize();
     print boomlist[1]; 
 
