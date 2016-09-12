@@ -9,6 +9,8 @@ node ('gorgon') {
     def serviceList = svcStr.tokenize()
     
     println serviceList[0]
+    println serviceList[1]
+    
 
 }
 
