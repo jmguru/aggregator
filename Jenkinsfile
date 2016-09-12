@@ -24,7 +24,8 @@ node ('gorgon') {
     println "hostname".execute().text
     
     def boom = sh script: 'sh /opt/wl/jenkins/getServices.sh', returnStdout: true
-    print boom
+    boomlist = boom.tokenize();
+    print boomlist[1]; 
 
 }
 
