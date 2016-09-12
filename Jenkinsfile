@@ -8,7 +8,9 @@ node ('gorgon') {
     
     def services = "sh /var/jenkins_home/getServices.sh".execute().text
 
-    println services
+    def l = Eval.me(services)
+
+    println l[0]
 
 }
 
