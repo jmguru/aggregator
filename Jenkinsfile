@@ -9,21 +9,8 @@
 node ('gorgon') {
    
     stage 'Stage Build'
- 
-    def svcStr = "sh /var/jenkins_home/getServices.sh".execute().text
-    def serviceList = svcStr.tokenize()
     
-    println serviceList[0]
-    println serviceList[1]
-    
-    
-    println "Using the sh command in Jenkinsfile:"
-    sh 'hostname'
-    
-    println "Using string.execute().text method:"
-    println "hostname".execute().text
-    
-    def boom = sh script: 'sh /opt/wl/jenkins/getServices.sh', returnStdout: true
+    def boom = sh script: 'getServices.sh', returnStdout: true
     boomlist = boom.tokenize();
     print boomlist[1]; 
 
