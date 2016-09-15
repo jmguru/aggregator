@@ -10,9 +10,14 @@ node ('gorgon') {
    
     stage 'Stage Build'
     
-    def boom = sh script: 'sh /opt/wl/jenkins/getServices.sh', returnStdout: true
-    boomlist = boom.tokenize();
-    print boomlist[1]; 
+    // Service methods
+    def sBID = '1.1' as float;
+    def sDID = '1.0' as float;
+    
+    // Json methods
+    def jBID = '1.0' as float;
+    def jDID = '1.0' as float;
+    
 
 }
 
