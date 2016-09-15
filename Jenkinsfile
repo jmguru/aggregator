@@ -18,6 +18,14 @@ node ('gorgon') {
     def jBID = '1.0' as float;
     def jDID = '1.0' as float;
     
+    /*****************************************
+     * Logic for do not deploy
+     * sBID==jBID && sDID==jDID
+     * ***************************************/
+     if (sBID==jBID & sDID==jDID) {
+        echo 'Not deploying'
+     }
+     echo 'Deploying!'
 
 }
 
